@@ -40,11 +40,14 @@
     <!-- Custom styles for this template -->
     <link href="/static/css/signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="text-center" style="background-color:#7393B3;">
 
 <main class="form-signin w-100 m-auto">
     <form action="#" method="POST">
-        <h1 class="h3 mb-3 fw-normal">Welcome</h1>
+        <h1 class="h3 mb-3 fw-normal">Welcome {{name}}</h1>
+        <p>{{biography}}</p>
+        <p><b>Spacy AI took some values from your biography:</b></p>
+        <p>{{ents}}</p>
     </form>
 </main>
     <script

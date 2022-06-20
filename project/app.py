@@ -20,7 +20,8 @@ def login():
         record=mycursor.fetchone()
         if record:
             flash('Welcome!', category='success')
-            session["email"]=record[1]
+            session['biography']=record[5]
+            session["firstName"]=record[1]
             return redirect(url_for ('home'))
         else:
             flash('Incorrect email/password. Please try again', category='error')
@@ -54,16 +55,22 @@ def sign_up():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
+    biography=session['biography']
+    name=session['firstName']
+    doc1=nlp(biography)
+    ents=show_ents(doc1)
     #email= session['email']
     #if request.method== 'POST':
     #    biography=request.form.get('biography')
     #    mycursor.execute("UPDATE User SET biography=%s WHERE email=%s", (biography, email))
     #    db.session.commit()
-    return render_template('home.html', email= session['email'])
+    return render_template('home.html', firstName= session['firstName'], name=name, biography=biography, ents=ents)
 
 def show_ents(doc):
+    entities=""
     if doc.ents:
         for ent in doc.ents:
-            print(ent.text+' - ' +str(ent.start_char) +' - '+ str(ent.end_char) + ' - '+ent.label_+ ' - '+str(spacy.explain(ent.label_)))
+            entities+=ent.text+", "
     else:
         print("No named entities found.")
+    return entities

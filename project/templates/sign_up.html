@@ -39,35 +39,36 @@
     <!-- Custom styles for this template -->
     <link href="/static/css/signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="text-center" style="background-color:#7393B3;">
 
 <main class="form-signin w-100 m-auto">
   <form method="POST">
+    <image class= "imageSize" src="{{ url_for('static', filename='images/alumni-feature-sju-brand_0.jpg')}}" alt="StJLogo"></image>
     <h1 class="h3 mb-3 fw-normal">Create New Account</h1>
 
     <div class="form-floating">
         <input type="firstName" class="form-control" id="firstName" name="firstName" placeholder="First Name">
-        <label for="firstName">First Name</label>
+        <label for="firstName"></label>
       </div>
     <div class="form-floating">
       <input type="lastName" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
-      <label for="lastName">Last Name</label>
+      <label for="lastName"></label>
     </div>
     <div class="form-floating">
       <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-      <label for="email">Email address</label>
+      <label for="email"></label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-      <label for="password">Password</label>
+      <label for="password"></label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="password2" name="password2" placeholder="Re-enter Password">
-      <label for="password2">Re-enter Password</label>
+      <label for="password2"></label>
     </div>
     <div class="form-floating">
       <input type="biography" class="form-control" name="biography" id="biography" placeholder="Enter your Biography(Name, Education, Experience, Languages, etc)">
-      <label for="biography">Enter your Biography</label>
+      <label for="biography"></label>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
