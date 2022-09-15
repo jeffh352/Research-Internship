@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -42,39 +43,12 @@
   <body class="text-center" style="background-color:#7393B3;">
 
 <main class="form-signin w-100 m-auto">
-  <form method="POST">
-    <image class= "imageSize" src="{{ url_for('static', filename='images/alumni-feature-sju-brand_0.jpg')}}" alt="StJLogo"></image>
-    <h1 class="h3 mb-3 fw-normal">Create New Account</h1>
-
-    <div class="form-floating">
-        <input type="firstName" class="form-control" id="firstName" name="firstName" placeholder="First Name">
-        <label for="firstName"></label>
-      </div>
-    <div class="form-floating">
-      <input type="lastName" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
-      <label for="lastName"></label>
-    </div>
-    <div class="form-floating">
-      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-      <label for="email"></label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-      <label for="password"></label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="password2" name="password2" placeholder="Re-enter Password">
-      <label for="password2"></label>
-    </div>
-    <div class="form-floating">
-      <input type="biography" class="form-control" name="biography" id="biography" placeholder="Enter your Biography(Name, Education, Experience, Languages, etc)">
-      <label for="biography"></label>
-    </div>
-
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-    <a href="/">Log In</a>
-  </form>
+    <form action="#" method="POST">
+        <h1 class="h3 mb-3 fw-normal">Welcome {{name}}</h1>
+        <p>{{biography}}</p>
+        <p><b>Spacy AI took some values from your biography:</b></p>
+        <p>{{ents}}</p>
+    </form>
 </main>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link href="/static/css/main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <input type="checkbox" id="check">
@@ -23,12 +27,16 @@
      <li><a href="/logout"><i class="fas fa-calendar-week"></i>Logout</a></li>
     </ul>
    </div>
-   <main class="form-signin">
-    <p>Update Notes</p>
-    <p>Updated tables to look more fancy</p>
-    <p>Fixed bug issues regarding refreshing pages and clicking on pages that access the database multiple times</p>
-    <a href="/api">Access API</a>
+   <main class="table">
+    <form method="POST">
+        <h1 class="h4 mb-3 fw-normal">Respond to User</h1>
+        <div>
+          <textarea class="textarea" id="reply" name="reply" rows="4" cols="50"></textarea>
+          <button>Submit</button>
+        </div>
+    </form>
    </main>
+   
    <section></section>
   </body>
 </html>

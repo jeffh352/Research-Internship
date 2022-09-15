@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  </head>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Navigation Bar</header>
+    <ul>
+     <li><a href="/question"><i class="far fa-question-circle"></i>Ask Question</a></li>
+     <li><a href="/similarityCheck"><i class="fas fa-link"></i>Search Experts</a></li>
+     <li><a href="/forums"><i class="fas fa-stream"></i>Forums</a></li>
+     <li><a href="/logout"><i class="fas fa-calendar-week"></i>Logout</a></li>
+    </ul>
+   </div>
+   <main class="table">
+    <h1 class="h4 mb-3 fw-normal">Forums</h1>
+        <div class="container">
+            <div class="row">
+                <table id="example" class="table table-striped table-hover" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>User</th>
+                            <th>Question</th>
+                            <th>Explanation</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    {% for row in post %}
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            {% for cell in row %}
+                            <td>{{ cell }}</td>
+                            {% endfor %}
+                            <td>
+                              <a type="button" class="btn btn=primary" href="/response">Reply</a>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+   </main>
+   <section></section>
+  </body>
+</html>
